@@ -2,7 +2,7 @@
 **for my usage only, unless you really want to**
 
 1. i3
-  *kill the nautilus desktop thing
+  * kill the nautilus desktop thing
 2. chrome
 3. pavucontrol
   * so many dependencies
