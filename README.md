@@ -6,4 +6,6 @@
 3. pavucontrol
   * so many dependencies
 4. nvim
-
+  *solarized changes
+  *dircolors
+5. 
