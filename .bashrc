@@ -1,7 +1,11 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
+#hackery for chinese
 
+
+export GOPATH="/home/howard/go"
+export PATH="$PATH:$GOPATH/bin:/home/howard/meme:/opt/idea-IC-171.4249.39/bin"
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -90,26 +94,21 @@ fi
 # some more ls aliases
 alias ls='ls -alF --color=auto'
 
+alias i3lock='i3lock -i ~/Downloads/screensaver.png'
+alias weather='curl wttr.in'
 #nav
 
 alias b='cd ..'
 alias bb='cd ../..'
 alias bbb='cd ../../..'
 
-#vim
+alias lock='i3lock'
 
-alias vim='nvim'
+alias minstall='mvn install -DskipTests -Plocal -s settings.xml'
+alias mrun='mvn spring-boot:run -DskipTests -Plocal -s ../settings.xml'
 
-#lock
+alias ndocker='cd ~/go/src/github.com/docker/distribution/'
 
-alias lock='i3lock -i ~/Downloads/sloth.png -t'
-alias gymlock='i3lock -i ~/Pictures/gym.png -t'
-#nav
-
-alias cosmos='cd ~/Downloads/cosmos'
-alias ui='cd ~/Downloads/dgx-webapp'
-alias mbuild='mvn spring-boot:run -DskipTests -Plocal -s ../settings.xml'
-alias rest='cd ~/Downloads/dgx-webservice'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -133,4 +132,4 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
+LS_COLORS=$LS_COLORS:'di=0;35:' ; export LS_COLORS
