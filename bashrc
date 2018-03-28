@@ -1,11 +1,8 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-#hackery for chinese
 
 
-export GOPATH="/home/howard/go"
-export PATH="$PATH:$GOPATH/bin:/home/howard/meme:/opt/idea-IC-171.4249.39/bin"
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -92,22 +89,18 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ls='ls -alF --color=auto'
+alias ls='ls -la --color=auto'
 
-alias i3lock='i3lock -i ~/Downloads/screensaver.png'
-alias weather='curl wttr.in'
 #nav
 
 alias b='cd ..'
 alias bb='cd ../..'
 alias bbb='cd ../../..'
+alias t='cd ~/linux/bcc/tools'
+alias down='cd ~/Downloads'
 
-alias lock='i3lock'
-
-alias minstall='mvn install -DskipTests -Plocal -s settings.xml'
-alias mrun='mvn spring-boot:run -DskipTests -Plocal -s ../settings.xml'
-
-alias ndocker='cd ~/go/src/github.com/docker/distribution/'
+alias k='cd ~/linux/linux'
+PATH="$HOME/linux/vm:$PATH"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -132,4 +125,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-LS_COLORS=$LS_COLORS:'di=0;35:' ; export LS_COLORS
