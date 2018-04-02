@@ -9,7 +9,7 @@ if [ "$(pwd)" != ~/dotfiles ]; then
 	exit 1
 fi
 
-sudo pacman -Syu
+sudo pacman -Sy
 
 sudo pacman --noconfirm -S --needed base-devel
 
@@ -35,7 +35,7 @@ if ! pacman -Q yaourt >/dev/null 2>&1; then
 	rm -rf /tmp/yaourt /tmp/yaourt.tar.gz
 fi
 
-PACKAGES =(
+PACKAGES=(
 	adobe-source-han-sans-jp-fonts
 	alsa-lib
 	dmenu
@@ -58,5 +58,8 @@ PACKAGES =(
 )
 
 yaourt --noconfirm -S --needed "${PACKAGES[@]}"
+
+#hackiness for feh/i3
+echo "feh --bg-fill \"\$WP\" 2> /dev/null" >> ~/.config/variety/scripts/set_wallpaper
 
 ~/dotfiles/install.sh -a

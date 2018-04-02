@@ -98,9 +98,11 @@ alias bb='cd ../..'
 alias bbb='cd ../../..'
 alias t='cd ~/linux/bcc/tools'
 alias down='cd ~/Downloads'
+alias dot='cd ~/dotfiles'
 
 alias k='cd ~/linux/linux'
-PATH="$HOME/linux/vm:$PATH"
+PATH="$HOME/linux/vm:$HOME/bin:$PATH"
+source /usr/share/git/completion/git-completion.bash 
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
