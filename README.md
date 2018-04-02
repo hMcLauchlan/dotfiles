@@ -1,12 +1,3 @@
-# configs and stuff
+# Howard's configs and things
 
-**for my usage, but if you really want to**
-
-1. i3-gaps
-2. .ssh configs are useful 
-3. pavucontrol
-  * so many dependencies
-4. nvim
-  * solarized changes
-  * dircolors
-5. 
+This is a bunch of configs and stuff to set up a fresh arch install. None of that fancy shit you see on /r/unixporn, unfortunately.
