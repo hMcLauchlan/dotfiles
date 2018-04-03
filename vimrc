@@ -10,7 +10,7 @@ set tw=80
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set noexpandtab 
+set noexpandtab
 set clipboard+=unnamedplus
 set splitbelow
 set splitright
@@ -33,10 +33,12 @@ set smartcase
 set hlsearch
 set incsearch
 
+" Splits
 
-"cuz i fuck up a lot
-map :W :w
-map :Q :q
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 "navigation from insert mode
 

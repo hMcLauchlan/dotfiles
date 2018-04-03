@@ -102,6 +102,7 @@ alias dot='cd ~/dotfiles'
 
 alias k='cd ~/linux/linux'
 PATH="$HOME/linux/vm:$HOME/bin:$PATH"
+export EDITOR=vim
 source /usr/share/git/completion/git-completion.bash 
 
 # Add an "alert" alias for long running commands.  Use like so:
