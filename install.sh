@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# shamelessly taken(mostly) from osandov
+# shamelessly taken (mostly) from osandov
 
 cd "$(dirname "$0")"
 
