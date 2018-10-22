@@ -66,11 +66,15 @@ esac
 
 unset color_prompt force_color_prompt
 
+git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
 	# PS1="${cyan}${debian_chroot:+($debian_chroot)}\u@\h:\w\a ${reset}"
-	PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[1;31m\]\$(git_branch)\[\033[00m\]$ "
     ;;
 *)
     ;;
@@ -102,10 +106,13 @@ alias bbb='cd ../../..'
 alias t='cd ~/linux/bcc/tools'
 alias down='cd ~/Downloads'
 alias dot='cd ~/dotfiles'
+alias mem='cd ~/memsql'
+alias test='cd ~/memsql/memsqltest'
 
 alias k='cd ~/linux/linux'
 PATH="$HOME/linux/vm:$HOME/bin:$PATH"
 export EDITOR=vim
+set -o vi
 source /usr/share/git/completion/git-completion.bash 
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -131,3 +138,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+source ~/memsql/.memsqlrc
+export PATH=$PATH:~/psyduck/bin
+#PBNG Client
+export PATH=$PATH:/home/hmclauchlan/pbng
+export PYTHONPATH=$PYTHONPATH:/home/hmclauchlan/pbng/py
