@@ -1,11 +1,6 @@
 [user]
 	name = Howard McLauchlan
-	email = hmclauchlan@fb.com
-[sendemail]
-	smtpencryption = tls
-	smtpserver = outlook.office365.com
-	smtpserverport = 587
-	smtpuser = hmclauchlan@fb.com
+	email = hmclauchlan@memsql.com
 [alias]
 	amend = commit -a --amend --no-edit
 	refer = !git --no-pager show -s --abbrev=12 --pretty='tformat:%h (\"%s\")'

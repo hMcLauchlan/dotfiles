@@ -1,6 +1,14 @@
-inoremap jk <Esc>
+filetype off
+set rtp+=/home/hmclauchlan/memsql/utils/private/vim/Vundle.vim
+call vundle#begin()
 
-filetype plugin on
+Plugin 'Vundle.vim'
+Plugin 'file:///home/hmclauchlan/.vim/bundle/vim-rtags'
+
+call vundle#end()
+
+inoremap jk <Esc>
+filetype plugin indent on
 
 set autoindent
 set number
@@ -10,12 +18,11 @@ set tw=80
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set noexpandtab
+set expandtab
 set clipboard+=unnamedplus
 set splitbelow
 set splitright
 set showtabline=2
-
 set notimeout
 
 syntax enable 
@@ -47,4 +54,8 @@ imap <C-w>j <Esc><C-w>j
 imap <C-w>k <Esc><C-w>k
 imap <C-w>l <Esc><C-w>l
 
-map <C-n> :NERDTreeToggle<CR>
+"map <C-n> :NERDTreeToggle<CR>
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+autocmd BufRead,BufNewFile /home/hmclauchlan/linux/linux/* source /home/hmclauchlan/dotfiles/vim/c.vim
