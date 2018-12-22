@@ -1,0 +1,25 @@
+#!/bin/sh
+
+set -eu
+
+unset tip
+unset onto
+
+if [ $# -eq 0 ]
+then
+    tip="HEAD"
+    onto="master"
+elif [ $# -eq 1 ]
+then
+    tip="HEAD"
+    onto="${1}"
+elif [ $# -eq 2 ]
+then
+    tip="${1}"
+    onto="${2}"
+else
+    echo "${0}: wrong number of arguments" 1>&2
+    echo "usage: ${0} [WORKING_BRANCH] BASE_BRANCH" 1>&2
+fi
+
+exec git diff $(git merge-base "${tip}" "${onto}") "${tip}"

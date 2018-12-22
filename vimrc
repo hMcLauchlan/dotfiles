@@ -1,11 +1,4 @@
 filetype off
-set rtp+=/home/hmclauchlan/memsql/utils/private/vim/Vundle.vim
-call vundle#begin()
-
-Plugin 'Vundle.vim'
-Plugin 'file:///home/hmclauchlan/.vim/bundle/vim-rtags'
-
-call vundle#end()
 
 inoremap jk <Esc>
 filetype plugin indent on
@@ -55,7 +48,5 @@ imap <C-w>k <Esc><C-w>k
 imap <C-w>l <Esc><C-w>l
 
 "map <C-n> :NERDTreeToggle<CR>
-
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 autocmd BufRead,BufNewFile /home/hmclauchlan/linux/linux/* source /home/hmclauchlan/dotfiles/vim/c.vim
