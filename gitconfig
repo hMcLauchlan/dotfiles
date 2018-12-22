@@ -26,4 +26,15 @@
 	sort = version:refname
 [versionsort]
 	prereleaseSuffix = -rc
-
+[pull]
+    rebase = true
+[grep]
+    lineNumber = true
+[merge]
+    ff = only
+[format]
+    pretty = fuller
+[alias]
+    clog = log --date=format-local:'%a %b %d %H:%M:%S %Y' --pretty='%C(auto) %h %cd %d %C(red)(%aN)%C(reset) %<(200,trunc)%s'
+    glog = !git clog --graph
+    alog = !git glog $(git branch --list | sed -e 's/^[ *]*//' | tr '\n' ' ')

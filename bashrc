@@ -106,10 +106,10 @@ alias bbb='cd ../../..'
 alias t='cd ~/linux/bcc/tools'
 alias down='cd ~/Downloads'
 alias dot='cd ~/dotfiles'
-alias mem='cd ~/memsql'
-alias test='cd ~/memsql/memsqltest'
 alias weather='curl wttr.in/waterloo'
 alias mutt='neomutt -F ~/.config/.mutt/muttrc'
+
+alias hmake='ghc --make'
 
 alias k='cd ~/linux/linux'
 alias btrfs='cd ~/linux/linux/fs/btrfs'
@@ -141,8 +141,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-source ~/memsql/.memsqlrc
-export PATH=$PATH:~/psyduck/bin
-#PBNG Client
-export PATH=$PATH:/home/hmclauchlan/pbng
-export PYTHONPATH=$PYTHONPATH:/home/hmclauchlan/pbng/py
