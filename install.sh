@@ -20,6 +20,7 @@ Optional:
 	-g	install git
 	-s	install shell (bash)
 	-w	install wm (i3)
+	-b	install bin
 
 By default, existing configs will be overwritten. Be careful.
 
@@ -42,7 +43,7 @@ if [ $# -eq 0 ]; then
 	usage "err"
 fi
 
-while getopts "avdgsw" OPT; do
+while getopts "avdgswb" OPT; do
 	case "$OPT" in
 		a)
 			DO_ALL=1
@@ -61,6 +62,9 @@ while getopts "avdgsw" OPT; do
 			;;
 		w)
 			DO_WM=1
+			;;
+		b)
+			DO_BIN=1
 			;;
 		h)
 			usage "out"
@@ -100,6 +104,13 @@ fi
 
 if do_install "$DO_WM"; then
 	mkdir -p ~/.config/i3
-	install_file ~/dotfiles/config ~/.config/i3/config
+	install_file ~/dotfiles/desktop_config ~/.config/i3/config
+	if [ -d /proc/acpi/battery/BAT* ]; then
+		install_file ~/dotfiles/config ~/.config/i3/config
+	fi
 	install_file ~/dotfiles/wm/xinitrc ~/.xinitrc
+fi
+
+if do_install "$DO_BIN"; then
+	install_file ~/dotfiles/bin ~/bin
 fi

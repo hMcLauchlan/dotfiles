@@ -37,13 +37,19 @@ fi
 
 PACKAGES=(
 	adobe-source-han-sans-jp-fonts
+	adobe-source-han-sans-cn-fonts
+	adobe-source-han-sans-tw-fonts
 	alsa-lib
+	bc
 	dmenu
 	evince
 	feh
 	google-chrome
 	librsvg # redshift
 	openssh
+	perl-authen-sasl # send-email
+	perl-net-smtp-ssl # send-email
+	perl-mime-tools # send-email
 	pulseaudio
 	python
 	python-gobject # redshift
@@ -55,6 +61,7 @@ PACKAGES=(
 	xorg-xrandr
 	xterm
 	terminator
+	vim
 )
 
 yaourt --noconfirm -S --needed "${PACKAGES[@]}"

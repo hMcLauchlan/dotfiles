@@ -27,6 +27,8 @@ exec --no-startup-id variety
 exec --no-startup-id redshift
 exec --no-startup-id screenstuff
 exec --no-startup-id supavolumed
+exec --no-startup-id compton
+exec --no-startup-id dhcpcd
 
 #personal shit
 bindsym $mod+m move workspace to output right

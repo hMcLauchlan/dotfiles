@@ -108,9 +108,12 @@ alias down='cd ~/Downloads'
 alias dot='cd ~/dotfiles'
 alias mem='cd ~/memsql'
 alias test='cd ~/memsql/memsqltest'
+alias weather='curl wttr.in/waterloo'
+alias mutt='neomutt -F ~/.config/.mutt/muttrc'
 
 alias k='cd ~/linux/linux'
-PATH="$HOME/linux/vm:$HOME/bin:$PATH"
+alias btrfs='cd ~/linux/linux/fs/btrfs'
+
 export EDITOR=vim
 set -o vi
 source /usr/share/git/completion/git-completion.bash 
