@@ -108,6 +108,7 @@ alias down='cd ~/Downloads'
 alias dot='cd ~/dotfiles'
 alias weather='curl wttr.in/waterloo'
 alias mutt='neomutt -F ~/.config/.mutt/muttrc'
+alias h='cd ~/haskell'
 
 alias hmake='ghc --make'
 

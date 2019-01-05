@@ -21,6 +21,7 @@ font pango:monospace 8
 
 #stupid stuff
 #exec --no-startup-id nm-applet
+exec --no-startup-id xrandr --output HDMI-0 --right-of DVI-1
 
 #less stupid stuff
 exec --no-startup-id variety
@@ -34,7 +35,7 @@ bindsym --release $mod+Shift+s exec --no-startup-id gnome-screenshot -a
 
 #gaps
 
-gaps inner 10
+gaps inner 5
 gaps outer 5
 
 # Before i3 v4.8, we used to recommend this one as the default:
