@@ -109,6 +109,7 @@ alias dot='cd ~/dotfiles'
 alias weather='curl wttr.in/waterloo'
 alias mutt='neomutt -F ~/.config/.mutt/muttrc'
 alias h='cd ~/haskell'
+alias s='cd ~/school'
 
 alias hmake='ghc --make'
 
@@ -142,3 +143,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+export PATH="$HOME/bin:$PATH"

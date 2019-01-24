@@ -52,6 +52,7 @@ qemu_options = [
     '-smp', {args.cpu!r},
     '-m', {args.memory!r},
     '-watchdog', 'i6300esb',
+    '-device', 'virtio-rng-pci',
 
     # Host forwarding can be enabled by adding to the -netdev option:
     # hostfwd=[tcp|udp]:[hostaddr]:hostport-[guestaddr]:guestport
@@ -117,8 +118,11 @@ def get_qemu_args(args):
 
 def cmd_run(args):
     os.chdir(os.path.expanduser('~/linux/vm'))
-    args = get_qemu_args(args)
-    os.execvp(args[0], args)
+    qemu_args = get_qemu_args(args)
+    if args.dry_run:
+        print(' '.join(shlex.quote(arg) for arg in qemu_args))
+    else:
+        os.execvp(qemu_args[0], qemu_args)
 
 
 def download_latest_archiso(mirror):
@@ -275,16 +279,10 @@ systemctl enable vm-modules-mounter.service
 sudo -u "${user}" bash -l << "SUDOEOF"
 set -eux
 cd /tmp
-curl -O https://aur.archlinux.org/cgit/aur.git/snapshot/cower.tar.gz
-tar -xf cower.tar.gz
-cd cower
+curl -O https://aur.archlinux.org/cgit/aur.git/snapshot/aurman.tar.gz
+tar -xf aurman.tar.gz
+cd aurman
 makepkg -si --noconfirm --skippgpcheck
-
-cd /tmp
-curl -O https://aur.archlinux.org/cgit/aur.git/snapshot/pacaur.tar.gz
-tar -xf pacaur.tar.gz
-cd pacaur
-makepkg -si --noconfirm
 SUDOEOF
 ARCHCHROOTEOF
 """)
@@ -467,6 +465,9 @@ def main():
     parser_run.add_argument(
         '-a', '--append', action='append', default=argparse.SUPPRESS,
         help='append a kernel command line argument (only when passing -k)')
+    parser_run.add_argument(
+        '-n', '--dry-run', action='store_true',
+        help='print QEMU command line instead of running')
     parser_run.add_argument(
         'qemu_options', metavar='QEMU_OPTION', nargs='*',
         help='extra options to pass directly to QEMU')
