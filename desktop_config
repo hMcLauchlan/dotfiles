@@ -11,6 +11,11 @@
 
 set $mod Mod1
 
+# CHANGE THESE WHEN NEW COMPUTER
+exec --no-startup-id xrandr --output HDMI-0 --right-of DVI-1
+set $left "DVI-1"
+set $right "HDMI-0"
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 8
@@ -21,12 +26,12 @@ font pango:monospace 8
 
 #stupid stuff
 #exec --no-startup-id nm-applet
-exec --no-startup-id xrandr --output HDMI-0 --right-of DVI-1
 
 #less stupid stuff
 exec --no-startup-id variety
 exec --no-startup-id redshift
 exec --no-startup-id compton
+exec_always --no-startup-id rdm
 
 #personal stuff
 bindsym $mod+m move workspace to output right
@@ -158,10 +163,36 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # assignments
 
-# hacky for spotify only
-for_window [class="Spotify"] move to workspace $ws4
+# force layouts
+# we don't really get to loop here...
+# I guess we treat this file as src of truth
+exec --no-startup-id sh ~/.config/i3/run_layout.sh $ws1
+exec --no-startup-id sh ~/.config/i3/run_layout.sh $ws2
+# spotify doesn't play nice, do it manually later
+#
+#exec --no-startup-id sh ~/.config/i3/run_layout.sh $ws4
 
-assign [class="Slack"] $ws10
+exec --no-startup-id sh ~/.config/i3/run_layout.sh $ws6
+exec --no-startup-id sh ~/.config/i3/run_layout.sh $ws8
+exec --no-startup-id sh ~/.config/i3/run_layout.sh $ws10
+
+workspace $ws1 output $left
+workspace $ws2 output $right
+workspace $ws4 output $right
+workspace $ws6 output $right
+workspace $ws8 output $right
+workspace $ws10 output $right
+
+exec emacs
+# huh
+exec google-chrome-stable
+exec google-chrome-stable
+exec google-chrome-stable
+
+exec spotify
+# sad
+for_window [class = "Spotify"] move to workspace $ws4
+exec i3-sensible-terminal
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

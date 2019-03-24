@@ -99,6 +99,7 @@ fi
 alias ls='ls -la --color=auto'
 
 #nav
+#these should be in a bash_aliases... but you know.
 
 alias b='cd ..'
 alias bb='cd ../..'
@@ -110,11 +111,13 @@ alias weather='curl wttr.in/waterloo'
 alias mutt='neomutt -F ~/.config/.mutt/muttrc'
 alias h='cd ~/haskell'
 alias s='cd ~/school'
+alias sc='s && cd compilers'
 
 alias hmake='ghc --make'
 
 alias k='cd ~/linux/linux'
 alias btrfs='cd ~/linux/linux/fs/btrfs'
+alias rindex='make clean && make -n | rc -c -'
 
 export EDITOR=vim
 set -o vi
@@ -144,4 +147,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.cabal/bin:$HOME/.local/bin:$PATH"
