@@ -118,6 +118,7 @@ alias hmake='ghc --make'
 alias k='cd ~/linux/linux'
 alias btrfs='cd ~/linux/linux/fs/btrfs'
 alias rindex='make clean && make -n | rc -c -'
+alias open='xdg-open'
 
 export EDITOR=vim
 set -o vi

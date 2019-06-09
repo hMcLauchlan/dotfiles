@@ -20,7 +20,7 @@ set notimeout
 
 syntax enable 
 colorscheme solarized
-set background=dark
+set background=light
 
 "escape delays
 set notimeout

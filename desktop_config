@@ -36,7 +36,7 @@ exec_always --no-startup-id rdm
 #personal stuff
 bindsym $mod+m move workspace to output right
 focus_on_window_activation focus
-bindsym --release $mod+Shift+s exec --no-startup-id scrot -e 'mv $f ~/pictures/ss/' -s
+bindsym --release $mod+Shift+s exec --no-startup-id scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/pictures/ss && mv $f ~/pictures/ss/ && xclip -selection clipboard -t image/png -i ~/pictures/ss/`ls -1 -t ~/pictures/ss | head -1`'
 
 #gaps
 

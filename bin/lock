@@ -1,6 +1,6 @@
 #!/bin/bash                                                                                                                                   
 set -e
-I3LOCK=~/i3lock/x86_64-pc-linux-gnu/i3lock
+I3LOCK=~/i3lock/build/i3lock
 IMAGE=$(mktemp /tmp/XXXXXX.jpg)
 
 if ps aux | grep -v grep | grep 'compton' > /dev/null
