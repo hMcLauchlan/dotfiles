@@ -1,16 +1,2 @@
-#!/bin/bash                                                                                                                                   
-set -e
-I3LOCK=~/i3lock/build/i3lock
-IMAGE=$(mktemp /tmp/XXXXXX.jpg)
-
-if ps aux | grep -v grep | grep 'compton' > /dev/null
-then
-    pkill compton
-fi
-trap "compton -b" EXIT
-convert \
-    x:root /home/hmclauchlan/images/background.jpg \
-    -average \
-    -resize 20% -blur 5x5 -resize 500.5% \
-    $IMAGE
-[ $(pgrep -cx i3lock) -gt 0 ] || $I3LOCK "$@" -f -e -n -i $IMAGE
+#!/bin/sh                                                                                                                                  
+i3lock -i /usr/local/google/home/hmclauchlan/Downloads/psycore.jpg

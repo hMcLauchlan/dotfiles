@@ -10,7 +10,7 @@ if [ "$(pwd)" != ~/dotfiles ]; then
 fi
 
 usage () {
-	USAGE_STRING="Usage: $0 [-avdgsw]
+	USAGE_STRING="Usage: $0 [-avdgswk]
 $0 -h
 
 Optional:
@@ -21,6 +21,7 @@ Optional:
 	-s	install shell (bash)
 	-w	install wm (i3)
 	-b	install bin
+        -k  	install keybindings
 
 By default, existing configs will be overwritten. Be careful.
 
@@ -43,7 +44,7 @@ if [ $# -eq 0 ]; then
 	usage "err"
 fi
 
-while getopts "avdgswb" OPT; do
+while getopts "avdgswbk" OPT; do
 	case "$OPT" in
 		a)
 			DO_ALL=1
@@ -65,6 +66,9 @@ while getopts "avdgswb" OPT; do
 			;;
 		b)
 			DO_BIN=1
+			;;
+		k)
+			DO_KEYBIND=1
 			;;
 		h)
 			usage "out"
@@ -113,4 +117,8 @@ fi
 
 if do_install "$DO_BIN"; then
 	install_file ~/dotfiles/bin ~/bin
+fi
+
+if do_install "$DO_KEYBIND"; then
+	install_file ~/dotfiles/key-bindings.bash ~/.key-bindings.bash
 fi

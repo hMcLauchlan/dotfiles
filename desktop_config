@@ -12,9 +12,10 @@
 set $mod Mod1
 
 # CHANGE THESE WHEN NEW COMPUTER
-exec --no-startup-id xrandr --output HDMI-0 --right-of DVI-1
-set $left "DVI-1"
-set $right "HDMI-0"
+set $left "DP-2"
+set $right "DP-0"
+# exec_always --no-startup-id gscreen
+exec_always --no-startup-id xrandr --output DP-0 --right-of DP-2
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -28,10 +29,10 @@ font pango:monospace 8
 #exec --no-startup-id nm-applet
 
 #less stupid stuff
-exec --no-startup-id variety
-exec --no-startup-id redshift
-exec --no-startup-id compton
-exec_always --no-startup-id rdm
+#exec --no-startup-id variety
+#exec --no-startup-id redshift
+#exec --no-startup-id compton
+#exec_always --no-startup-id rdm
 
 #personal stuff
 bindsym $mod+m move workspace to output right
@@ -40,8 +41,8 @@ bindsym --release $mod+Shift+s exec --no-startup-id scrot -s 'screenshot_%Y%m%d_
 
 #gaps
 
-gaps inner 5
-gaps outer 5
+#gaps inner 5
+#gaps outer 5
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -183,7 +184,8 @@ workspace $ws6 output $right
 workspace $ws8 output $right
 workspace $ws10 output $right
 
-exec emacs
+# maybe hold off on this; glinux borks this
+# exec emacs
 # huh
 exec google-chrome-stable
 exec google-chrome-stable

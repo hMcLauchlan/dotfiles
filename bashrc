@@ -35,8 +35,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=10000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -99,30 +99,13 @@ fi
 alias ls='ls -la --color=auto'
 
 #nav
-#these should be in a bash_aliases... but you know.
-
-alias b='cd ..'
-alias bb='cd ../..'
-alias bbb='cd ../../..'
-alias t='cd ~/linux/bcc/tools'
-alias down='cd ~/Downloads'
-alias dot='cd ~/dotfiles'
-alias weather='curl wttr.in/waterloo'
-alias mutt='neomutt -F ~/.config/.mutt/muttrc'
-alias h='cd ~/haskell'
-alias s='cd ~/school'
-alias sc='s && cd compilers'
-
-alias hmake='ghc --make'
-
-alias k='cd ~/linux/linux'
-alias btrfs='cd ~/linux/linux/fs/btrfs'
-alias rindex='make clean && make -n | rc -c -'
-alias open='xdg-open'
-
-export EDITOR=vim
+#export EDITOR=vim
 set -o vi
 source /usr/share/git/completion/git-completion.bash 
+
+if `prodcertstatus -q`; then
+      source /google/data/ro/teams/figo/global_sq_bash_completion.bash
+fi
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -135,6 +118,16 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+
+if [ -f ~/.google_aliases ]; then
+    . ~/.google_aliases
+fi
+
+# fzf
+export FZF_DEFAULT_OPTS=--no-height
+if [ -f ~/.key-bindings.bash ]; then
+  . ~/.key-bindings.bash
 fi
 
 # enable programmable completion features (you don't need to enable
