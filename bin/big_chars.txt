@@ -1,0 +1,209 @@
+SPLIT
+ AAAAA
+A     A
+A     A
+AAAAAAA
+A     A
+A     A
+A     A
+SPLIT
+BBBBBB
+B     B
+B     B
+BBBBBBB
+B     B
+B     B
+BBBBBB
+SPLIT
+ CCCCCC
+C
+C
+C
+C
+C
+ CCCCCC
+SPLIT
+DDDDDD
+D     D
+D     D
+D     D
+D     D
+D     D
+DDDDDD
+SPLIT
+EEEEEEE
+E
+E
+EEEEEE
+E
+E
+EEEEEEE
+SPLIT
+FFFFFFF
+F
+F
+FFFFFF
+F
+F
+F
+SPLIT
+ GGGGGG
+G
+G
+G  GGGG
+G     G
+G     G
+ GGGGG
+SPLIT
+H     H
+H     H
+H     H
+HHHHHHH
+H     H
+H     H
+H     H
+SPLIT
+IIIIIII
+   I
+   I
+   I
+   I
+   I
+IIIIIII
+SPLIT
+JJJJJJJ
+   J
+   J
+   J
+   J
+   J
+JJJJ
+SPLIT
+K     K
+K   KK
+K KK
+KK
+K KK
+K   KK
+K     K
+SPLIT
+L
+L
+L
+L
+L
+L
+LLLLLLL
+SPLIT
+M     M
+MM   MM
+M M M M
+M  M  M
+M     M
+M     M
+M     M
+SPLIT
+N     N
+NN    N
+N N   N
+N  N  N
+N   N N
+N    NN
+N     N
+SPLIT
+ OOOOO
+O     O
+O     O
+O     O
+O     O
+O     O
+ OOOOO
+SPLIT
+PPPPPP
+P     P
+P     P
+PPPPPP
+P
+P
+P
+SPLIT
+ QQQQQ
+Q     Q
+Q     Q
+Q     Q
+Q   Q Q
+Q    QQ
+ QQQQQQ
+SPLIT
+RRRRRR
+R     R
+R     R
+RRRRRR
+R   R
+R    R
+R     R
+SPLIT
+ SSSSSS
+S
+S
+ SSSSS
+      S
+      S
+SSSSSS
+SPLIT
+TTTTTTT
+   T
+   T
+   T
+   T
+   T
+   T
+SPLIT
+U     U
+U     U
+U     U
+U     U
+U     U
+U     U
+ UUUUU
+SPLIT
+V     V
+V     V
+V     V
+V     V
+ V   V
+  V V
+   V
+SPLIT
+W     W
+W     W
+W     W
+W  W  W
+W W W W
+WW   WW
+W     W
+SPLIT
+X     X
+ X   X
+  X X
+   X
+  X X
+ X   X
+X     X
+SPLIT
+Y     Y
+ Y   Y
+  Y Y
+   Y
+   Y
+   Y
+   Y
+SPLIT
+ZZZZZZZ
+     Z
+    Z
+   Z
+  Z
+ Z
+ZZZZZZZ
+SPLIT

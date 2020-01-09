@@ -1,0 +1,61 @@
+#!/bin/sh
+
+MODE=1
+
+usage () {
+	USAGE_STRING="usage: $0 [-u]
+       $0 -h
+
+Options:
+  -u    undock (disable external monitors and enable laptop screen)
+
+Miscellaneous:
+  -h    display this help message and exit"
+
+	case "$1" in
+		out)
+			echo "$USAGE_STRING"
+			exit 0
+			;;
+		err)
+			echo "$USAGE_STRING" >&2
+			exit 1
+			;;
+	esac
+}
+
+while getopts "uh" OPT; do
+	case "$OPT" in
+		u)
+			MODE=u
+			;;
+		h)
+			usage "out"
+			;;
+		*)
+			usage "err"
+			;;
+	esac
+done
+
+LAPTOP_OUTPUT="eDP1"
+EXTERNAL_OUTPUT2="DP-0"
+EXTERNAL_OUTPUT1="DP-2"
+
+LAPTOP_MODE="1920x1080"
+EXTERNAL_MODE="2560x1440"
+
+case "$MODE" in
+	1)
+		xrandr --output "$LAPTOP_OUTPUT" --off --dpi 96x96 \
+			--output "$EXTERNAL_OUTPUT1" --mode "$EXTERNAL_MODE" --primary \
+			--brightness 1.2 \
+			--output "$EXTERNAL_OUTPUT2" --mode "$EXTERNAL_MODE" \
+			--right-of "$EXTERNAL_OUTPUT1" --brightness 1.2 \
+		;;
+	u)
+		xrandr --output "$LAPTOP_OUTPUT" --mode "$LAPTOP_MODE" --primary --dpi 96x96 \
+			--output "$EXTERNAL_OUTPUT1" --off \
+			--output "$EXTERNAL_OUTPUT2" --off
+		;;
+esac
