@@ -1,0 +1,3 @@
+#!/bin/bash
+
+i3bgwin 1920 0 2560 1600 -- rxvt -depth 32 -bg '[00]black' --color6 '[50]cyan' +sb -embed {windowid} -e cava

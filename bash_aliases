@@ -1,0 +1,22 @@
+alias b='cd ..'	
+alias bb='cd ../..'	
+alias bbb='cd ../../..'	
+alias t='cd ~/linux/bcc/tools'	
+alias down='cd ~/Downloads'	
+alias dot='cd ~/dotfiles'	
+alias weather='curl wttr.in/waterloo'	
+alias mutt='neomutt -F ~/.config/.mutt/muttrc'	
+alias h='cd ~/haskell'	
+alias s='cd ~/school'	
+alias sc='s && cd compilers'	
+
+alias hmake='ghc --make'	
+
+alias k='cd ~/linux/linux'	
+alias btrfs='cd ~/linux/linux/fs/btrfs'	
+alias rindex='make clean && make -n | rc -c -'	
+alias open='xdg-open'	
+
+alias mem='cd ~/work/memsql'
+alias studio='mem && cd go/src/platform/studio'
+alias memtest='mem && cd memsqltest/script_tests'

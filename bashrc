@@ -99,13 +99,10 @@ fi
 alias ls='ls -la --color=auto'
 
 #nav
-#export EDITOR=vim
+export EDITOR=vim
 set -o vi
 source /usr/share/git/completion/git-completion.bash 
 
-if `prodcertstatus -q`; then
-      source /google/data/ro/teams/figo/global_sq_bash_completion.bash
-fi
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -124,6 +121,8 @@ if [ -f ~/.google_aliases ]; then
     . ~/.google_aliases
 fi
 
+source ~/work/memsql/.memsqlrc
+
 # fzf
 export FZF_DEFAULT_OPTS=--no-height
 if [ -f ~/.key-bindings.bash ]; then
@@ -141,4 +140,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH="$HOME/bin:$HOME/.cabal/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.cabal/bin:$HOME/.local/bin:$PATH:/usr/local/go/bin"
+
+eval "$(direnv hook bash)"

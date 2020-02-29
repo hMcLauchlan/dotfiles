@@ -39,22 +39,15 @@ while getopts "uh" OPT; do
 done
 
 LAPTOP_OUTPUT="eDP-1"
-LEFT_OUTPUT="DP-1-1-8"
-RIGHT_OUTPUT="DP-1-8"
-
-# LAPTOP_MODE="1920x1080"
-# EXTERNAL_MODE="2560x1440"
+RIGHT_OUTPUT="DP-1"
 
 case "$MODE" in
 	1)
-		xrandr  --output "$LAPTOP_OUTPUT" --auto --left-of "$LEFT_OUTPUT" \
-			--output "$RIGHT_OUTPUT" --auto --rotate left\
-			--output "$LEFT_OUTPUT" --auto --primary \
-			--left-of "$RIGHT_OUTPUT" \
+		xrandr  --output "$LAPTOP_OUTPUT" --auto --left-of "$RIGHT_OUTPUT" \
+			--output "$RIGHT_OUTPUT" --auto --primary \
 		;;
 	u)
 		xrandr --output "$LAPTOP_OUTPUT" --auto --primary \
 			--output "$RIGHT_OUTPUT" --off \
-			--output "$LEFT_OUTPUT" --off
 		;;
 esac

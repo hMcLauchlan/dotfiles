@@ -96,6 +96,7 @@ fi
 
 if do_install "$DO_SHELL"; then
 	install_file ~/dotfiles/bashrc ~/.bashrc
+	install_file ~/dotfiles/bash_aliases ~/.bash_aliases
 fi
 
 if do_install "$DO_DIRCOLORS"; then
@@ -109,7 +110,7 @@ fi
 if do_install "$DO_WM"; then
 	mkdir -p ~/.config/i3
 	install_file ~/dotfiles/desktop_config ~/.config/i3/config
-	if [ -d /proc/acpi/battery/BAT* ]; then
+	if [ -d /sys/module/battery ]; then
 		install_file ~/dotfiles/config ~/.config/i3/config
 	fi
 	install_file ~/dotfiles/wm/xinitrc ~/.xinitrc

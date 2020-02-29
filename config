@@ -20,8 +20,8 @@ font pango:monospace 8
 #font pango:DejaVu Sans Mono 8
 
 #sadlife from debian
-exec dock -u
-exec dock
+#exec dock -u
+#exec dock
 # if that fails then its fine
 exec_always ~/.fehbg
 
@@ -41,7 +41,11 @@ exec_always xmodmap -e "keycode 108 = Return"
 exec_always xmodmap -e "keycode 37 = Control_L"
 
 # compton
-exec_always --no-startup-id compton --config ~/.config/compton.conf
+exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
+
+exec_always --no-startup-id pkill -9 cava
+exec_always --no-startup-id cava_ree
+
 
 #stupid stuff
 #exec --no-startup-id nm-applet
@@ -57,7 +61,8 @@ exec --no-startup-id blueman-applet
 #personal stuff
 bindsym $mod+m move workspace to output right
 focus_on_window_activation focus
-bindsym --release $mod+Shift+s exec --no-startup-id scrot -e 'mv $f ~/pictures/ss/' -s
+bindsym --release $mod+Shift+s exec --no-startup-id scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/pictures/ss && mv $f ~/pictures/ss/ && xclip -selection clipboard -t image/png -i ~/pictures/ss/`ls -1 -t ~/pictures/ss | head -1`'
+
 
 #gaps
 
@@ -144,8 +149,8 @@ set $ws1 "browser-l"
 set $ws2 "browser-r"
 set $ws3 "wildcard-l"
 set $ws4 "spotify-r"
-set $ws5 "servers-l"
-set $ws6 "dev-r"
+set $ws5 "dev-l"
+set $ws6 "servers-r"
 set $ws7 "misc-l"
 set $ws8 "misc-r"
 set $ws9 "pavuctrl-l"

@@ -33,8 +33,6 @@ else
       \ 'https://github.com/VundleVim/Vundle.vim'
 endif
 
-source /usr/share/vim/google/google.vim
-
 filetype plugin indent on
 
 " control p
@@ -108,15 +106,9 @@ nnoremap <s-k> <CR>
 let mapleader=" "
 nnoremap <SPACE> <Nop>
 
-" google plugins
-" consistency with emacs plugin;
-Glug blaze plugin[mappings]='<leader>G'
-let g:blazevim_blaze_executable = "rabbit"
 
-"Glug youcompleteme-google
 let g:ycm_max_num_identifier_candidates = 10
 
-Glug add_usings plugin[mappings]
 
 " Load the code formatting plugin. We first load the open-source version. Then,
 " we load the internal google settings. Then, we automatically enable formatting
