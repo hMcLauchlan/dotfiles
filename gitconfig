@@ -1,3 +1,21 @@
 [user]
 	name = Howard McLauchlan
-	email = work@hmclauchlan.com
+	email = hmclauchlan@memsql.com
+[core]
+    editor = vim
+[alias]
+    wdiff = diff
+    fgrep = grep --fixed-strings
+    clog = log --date=format-local:'%a %b %d %H:%M:%S %Y' --pretty='%C(auto) %h %cd %d %C(red)(%aN)%C(reset) %<(200,trunc)%s'
+    glog = !git clog --graph
+    alog = !git glog $(git branch --list | sed -e 's/^[ *]*//' | tr '\n' ' ')
+    me = log --author=hmclauchlan --pretty=format:"%h%x09%ad%x09%s"
+    br = branch -l
+    brr = br --sort=committerdate
+    st = status
+[pull]
+    rebase = true
+[merge]
+    tool = vimdiff
+[grep]
+    lineNumber = true

@@ -102,7 +102,7 @@ alias ls='ls -la --color=auto'
 export EDITOR=vim
 set -o vi
 source /usr/share/git/completion/git-completion.bash 
-
+set editing-mode vi
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -119,6 +119,10 @@ fi
 
 if [ -f ~/.google_aliases ]; then
     . ~/.google_aliases
+fi
+
+if [ -f ~/.meme_aliases ]; then
+    . ~/.meme_aliases
 fi
 
 source ~/work/memsql/.memsqlrc
@@ -140,6 +144,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH="$HOME/bin:$HOME/.cabal/bin:$HOME/.local/bin:$PATH:/usr/local/go/bin"
+export PATH="$HOME/bin:$HOME/.cabal/bin:$HOME/.local/bin:$PATH:/usr/local/go/bin:$HOME/psyduck/bin"
 
 eval "$(direnv hook bash)"
